@@ -17,7 +17,6 @@ pipeline{
         sh "mvn clean package"
       }
     }
-    /*
     stage('4CodeQuality'){
       steps{
         sh "echo 'Perfoming CodeQualityAnalysis' "
@@ -40,9 +39,6 @@ pipeline{
       emailext body: '''Hey guys
 Please check build status.
 
-=======
-
-bugFixed
 Thanks
 Landmark 
 +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
@@ -51,9 +47,6 @@ Landmark
       emailext body: '''Hey guys
 Good job build and deployment is successful.
 
-=======
-
-bugFixed
 Thanks
 Landmark 
 +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
@@ -62,14 +55,9 @@ Landmark
       emailext body: '''Hey guys
 Build failed. Please resolve issues.
 
-=======
-
-bugFixed
 Thanks
 Landmark 
 +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
     }
   } 
-  */
-}
 }
